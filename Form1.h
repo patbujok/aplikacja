@@ -175,6 +175,17 @@ namespace WindowsFormApplication1 {
 			static_cast<System::Byte>(238)));
 		okno->Controls->Add(etykieta2);
 
+		/////////textbox//////////
+
+		TextBox^ box1 = gcnew TextBox;
+		box1->Location = Point(170, 100);
+		okno->Controls->Add(box1);
+
+		TextBox^ box2 = gcnew TextBox;
+		box2->Location = Point(170, 160);
+		okno->Controls->Add(box2);
+
+
 
 
 		
