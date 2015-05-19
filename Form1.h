@@ -140,6 +140,16 @@ namespace WindowsFormApplication1 {
 		plus->Text = L"+";
 		plus->BackColor = System::Drawing::Color::Snow;
 		okno->Controls->Add(plus);
+
+		Button^ minus = gcnew Button;
+		minus->Location = Point(40, 100);
+		minus->Text = L"-";
+		minus->BackColor = System::Drawing::Color::Snow;
+		okno->Controls->Add(minus);
+
+		
+
+		
 	}
 };
 }
