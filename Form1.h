@@ -34,6 +34,8 @@ namespace WindowsFormApplication1 {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Button^  button1;
+	protected:
 
 	private:
 		/// <summary>
@@ -48,13 +50,38 @@ namespace WindowsFormApplication1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"Form1";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->SuspendLayout();
+			// 
+			// button1
+			// 
+			this->button1->BackColor = System::Drawing::Color::Snow;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->button1->Location = System::Drawing::Point(182, 256);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(108, 30);
+			this->button1->TabIndex = 0;
+			this->button1->Text = L"Koniec";
+			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
+			// 
+			// Form1
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::LightBlue;
+			this->ClientSize = System::Drawing::Size(484, 312);
+			this->Controls->Add(this->button1);
+			this->Name = L"Form1";
+			this->Text = L"Form1";
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		Close();
+	}
 	};
 }
 
