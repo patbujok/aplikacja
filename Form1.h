@@ -147,7 +147,17 @@ namespace WindowsFormApplication1 {
 		minus->BackColor = System::Drawing::Color::Snow;
 		okno->Controls->Add(minus);
 
-		
+		Button^ gwiazdka = gcnew Button;
+		gwiazdka->Location = Point(40, 130);
+		gwiazdka->Text = L"*";
+		gwiazdka->BackColor = System::Drawing::Color::Snow;
+		okno->Controls->Add(gwiazdka);
+
+		Button^ dzielenie = gcnew Button;
+		dzielenie->Location = Point(40, 160);
+		dzielenie->Text = L"/";
+		dzielenie->BackColor = System::Drawing::Color::Snow;
+		okno->Controls->Add(dzielenie);
 
 		
 	}
