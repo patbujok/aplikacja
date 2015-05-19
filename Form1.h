@@ -64,7 +64,7 @@ namespace WindowsFormApplication1 {
 			this->button1->BackColor = System::Drawing::Color::Snow;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->button1->Location = System::Drawing::Point(182, 256);
+			this->button1->Location = System::Drawing::Point(159, 191);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(108, 30);
 			this->button1->TabIndex = 0;
@@ -77,7 +77,7 @@ namespace WindowsFormApplication1 {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->label1->Location = System::Drawing::Point(160, 67);
+			this->label1->Location = System::Drawing::Point(133, 44);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(166, 21);
 			this->label1->TabIndex = 1;
@@ -88,7 +88,7 @@ namespace WindowsFormApplication1 {
 			this->button2->BackColor = System::Drawing::Color::Snow;
 			this->button2->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->button2->Location = System::Drawing::Point(57, 151);
+			this->button2->Location = System::Drawing::Point(30, 109);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(140, 35);
 			this->button2->TabIndex = 2;
@@ -98,7 +98,7 @@ namespace WindowsFormApplication1 {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(286, 151);
+			this->button3->Location = System::Drawing::Point(238, 109);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(140, 35);
 			this->button3->TabIndex = 3;
@@ -110,7 +110,7 @@ namespace WindowsFormApplication1 {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::LightBlue;
-			this->ClientSize = System::Drawing::Size(484, 312);
+			this->ClientSize = System::Drawing::Size(415, 274);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->label1);
@@ -130,8 +130,8 @@ namespace WindowsFormApplication1 {
 		Form^ okno = gcnew Form;
 		okno->Show();
 
-		okno->Width = 300;
-		okno->Height = 300;
+		okno->Width = 400;
+		okno->Height = 400;
 		okno->Text = "miniKalkulator";
 		okno->BackColor = System::Drawing::Color::NavajoWhite;
 
@@ -158,6 +158,24 @@ namespace WindowsFormApplication1 {
 		dzielenie->Text = L"/";
 		dzielenie->BackColor = System::Drawing::Color::Snow;
 		okno->Controls->Add(dzielenie);
+		///////////etykiety///////////////
+		Label^ etykieta1 = gcnew Label;
+		etykieta1->Width = 200;
+		etykieta1->Text = "Podaj pierwsz¹ liczbê";
+		etykieta1->Location = Point(160, 70);
+		etykieta1->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 10.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(238)));
+		okno->Controls->Add(etykieta1);
+	
+		Label^ etykieta2 = gcnew Label;
+		etykieta2->Width = 200;
+		etykieta2->Text = "Podaj drug¹ liczbê";
+		etykieta2->Location = Point(160, 130);
+		etykieta2->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 10.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(238)));
+		okno->Controls->Add(etykieta2);
+
+
 
 		
 	}
