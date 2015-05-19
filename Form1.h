@@ -175,6 +175,22 @@ namespace WindowsFormApplication1 {
 			static_cast<System::Byte>(238)));
 		okno->Controls->Add(etykieta2);
 
+		Label^ wynik = gcnew Label;
+		wynik->Width = 200;
+		wynik->Text = "Wynik";
+		wynik->Location = Point(70, 250);
+		wynik->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 10.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(238)));
+		okno->Controls->Add(wynik);
+
+		Label^ wynik2 = gcnew Label;
+		wynik2->Text = " ";
+		wynik2->Location = Point(120, 250);
+		wynik2->BackColor = System::Drawing::Color::White;
+		wynik2->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 10.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(238)));
+		okno->Controls->Add(wynik2);
+
 		/////////textbox//////////
 
 		TextBox^ box1 = gcnew TextBox;
