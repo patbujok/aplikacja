@@ -98,12 +98,16 @@ namespace WindowsFormApplication1 {
 			// 
 			// button3
 			// 
+			this->button3->BackColor = System::Drawing::Color::Snow;
+			this->button3->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
 			this->button3->Location = System::Drawing::Point(238, 109);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(140, 35);
 			this->button3->TabIndex = 3;
-			this->button3->Text = L"button3";
-			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Text = L"Rysowanie figur";
+			this->button3->UseVisualStyleBackColor = false;
+			this->button3->Click += gcnew System::EventHandler(this, &Form1::button3_Click);
 			// 
 			// Form1
 			// 
@@ -129,6 +133,7 @@ namespace WindowsFormApplication1 {
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 		Form^ okno = gcnew Form;
 		okno->Show();
+		this->Hide();
 
 		okno->Width = 400;
 		okno->Height = 400;
@@ -139,24 +144,28 @@ namespace WindowsFormApplication1 {
 		plus->Location = Point(40, 70);
 		plus->Text = L"+";
 		plus->BackColor = System::Drawing::Color::Snow;
+		plus->Click += gcnew System::EventHandler(this, &Form1::plus_Click);
 		okno->Controls->Add(plus);
 
 		Button^ minus = gcnew Button;
 		minus->Location = Point(40, 100);
 		minus->Text = L"-";
 		minus->BackColor = System::Drawing::Color::Snow;
+		//minus->Click += gcnew System::EventHandler(this, &Form1::minus_Click);
 		okno->Controls->Add(minus);
 
 		Button^ gwiazdka = gcnew Button;
 		gwiazdka->Location = Point(40, 130);
 		gwiazdka->Text = L"*";
 		gwiazdka->BackColor = System::Drawing::Color::Snow;
+		//gwiazdka->Click += gcnew System::EventHandler(this, &Form1::gwiazdka_Click);
 		okno->Controls->Add(gwiazdka);
 
 		Button^ dzielenie = gcnew Button;
 		dzielenie->Location = Point(40, 160);
 		dzielenie->Text = L"/";
 		dzielenie->BackColor = System::Drawing::Color::Snow;
+		//dzielenie->Click += gcnew System::EventHandler(this, &Form1::dzielenie_Click);
 		okno->Controls->Add(dzielenie);
 		///////////etykiety///////////////
 		Label^ etykieta1 = gcnew Label;
@@ -166,7 +175,7 @@ namespace WindowsFormApplication1 {
 		etykieta1->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 10.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 			static_cast<System::Byte>(238)));
 		okno->Controls->Add(etykieta1);
-	
+
 		Label^ etykieta2 = gcnew Label;
 		etykieta2->Width = 200;
 		etykieta2->Text = "Podaj drug¹ liczbê";
@@ -176,7 +185,7 @@ namespace WindowsFormApplication1 {
 		okno->Controls->Add(etykieta2);
 
 		Label^ wynik = gcnew Label;
-		wynik->Width = 200;
+		wynik->Width = 70;
 		wynik->Text = "Wynik";
 		wynik->Location = Point(70, 250);
 		wynik->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 10.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -184,11 +193,7 @@ namespace WindowsFormApplication1 {
 		okno->Controls->Add(wynik);
 
 		Label^ wynik2 = gcnew Label;
-		wynik2->Text = " ";
-		wynik2->Location = Point(120, 250);
-		wynik2->BackColor = System::Drawing::Color::White;
-		wynik2->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 10.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(238)));
+		wynik2->Location = Point(150, 250);
 		okno->Controls->Add(wynik2);
 
 		/////////textbox//////////
@@ -202,9 +207,25 @@ namespace WindowsFormApplication1 {
 		okno->Controls->Add(box2);
 
 
+	}
 
-
+		////button click////
+	private: System::Void plus_Click(System::Object^  sender, System::EventArgs^  e){
 		
+
+	}
+
+	
+	
+	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+		Form^ okno2 = gcnew Form;
+		okno2->Show();
+		this->Hide();
+
+		okno2->Width = 400;
+		okno2->Height = 400;
+		okno2->Text = "Rysowanie figur";
+		okno2->BackColor = System::Drawing::Color::NavajoWhite;
 	}
 };
 }
