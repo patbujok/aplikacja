@@ -53,7 +53,8 @@ namespace WindowsFormApplication1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->button1 = (gcnew System::Windows::Forms::Button());
+	
+		this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
@@ -127,11 +128,15 @@ namespace WindowsFormApplication1 {
 
 		}
 #pragma endregion
+		private: Form^ okno;
+				 private: TextBox^ box1;
+						  private: TextBox^ box2;
+								   private: TextBox^ wynik2;
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 		Close();
 	}
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
-		Form^ okno = gcnew Form;
+		okno = gcnew Form;
 		okno->Show();
 		this->Hide();
 
@@ -151,22 +156,23 @@ namespace WindowsFormApplication1 {
 		minus->Location = Point(40, 100);
 		minus->Text = L"-";
 		minus->BackColor = System::Drawing::Color::Snow;
-		//minus->Click += gcnew System::EventHandler(this, &Form1::minus_Click);
+		minus->Click += gcnew System::EventHandler(this, &Form1::minus_Click);
 		okno->Controls->Add(minus);
 
 		Button^ gwiazdka = gcnew Button;
 		gwiazdka->Location = Point(40, 130);
 		gwiazdka->Text = L"*";
 		gwiazdka->BackColor = System::Drawing::Color::Snow;
-		//gwiazdka->Click += gcnew System::EventHandler(this, &Form1::gwiazdka_Click);
+		gwiazdka->Click += gcnew System::EventHandler(this, &Form1::gwiazdka_Click);
 		okno->Controls->Add(gwiazdka);
 
 		Button^ dzielenie = gcnew Button;
 		dzielenie->Location = Point(40, 160);
 		dzielenie->Text = L"/";
 		dzielenie->BackColor = System::Drawing::Color::Snow;
-		//dzielenie->Click += gcnew System::EventHandler(this, &Form1::dzielenie_Click);
+		dzielenie->Click += gcnew System::EventHandler(this, &Form1::dzielenie_Click);
 		okno->Controls->Add(dzielenie);
+
 		///////////etykiety///////////////
 		Label^ etykieta1 = gcnew Label;
 		etykieta1->Width = 200;
@@ -192,28 +198,68 @@ namespace WindowsFormApplication1 {
 			static_cast<System::Byte>(238)));
 		okno->Controls->Add(wynik);
 
-		Label^ wynik2 = gcnew Label;
-		wynik2->Location = Point(150, 250);
-		okno->Controls->Add(wynik2);
+		
 
 		/////////textbox//////////
 
-		TextBox^ box1 = gcnew TextBox;
+		 box1 = gcnew TextBox;
 		box1->Location = Point(170, 100);
 		okno->Controls->Add(box1);
 
-		TextBox^ box2 = gcnew TextBox;
+		box2 = gcnew TextBox;
 		box2->Location = Point(170, 160);
 		okno->Controls->Add(box2);
 
+		wynik2 = gcnew TextBox;
+		wynik2->Location = Point(150, 250);
+		okno->Controls->Add(wynik2);
+		
 
 	}
 
 		////button click////
 	private: System::Void plus_Click(System::Object^  sender, System::EventArgs^  e){
-		
+
+		double x, y, wynik;
+		x = Double::Parse(box1->Text);
+		y = Double::Parse(box2->Text);
+		wynik = x + y;
+
+		wynik2->Text = wynik.ToString();
 
 	}
+
+				private: System::Void minus_Click(System::Object^  sender, System::EventArgs^  e){
+
+					double x, y, wynik;
+					x = Double::Parse(box1->Text);
+					y = Double::Parse(box2->Text);
+					wynik = x - y;
+
+					wynik2->Text = wynik.ToString();
+
+				}
+
+							private: System::Void gwiazdka_Click(System::Object^  sender, System::EventArgs^  e){
+
+								double x, y, wynik;
+								x = Double::Parse(box1->Text);
+								y = Double::Parse(box2->Text);
+								wynik = x * y;
+
+								wynik2->Text = wynik.ToString();
+
+							}
+										private: System::Void dzielenie_Click(System::Object^  sender, System::EventArgs^  e){
+
+											double x, y, wynik;
+											x = Double::Parse(box1->Text);
+											y = Double::Parse(box2->Text);
+											wynik = x / y;
+
+											wynik2->Text = wynik.ToString();
+
+										}
 
 	
 	
@@ -225,7 +271,15 @@ namespace WindowsFormApplication1 {
 		okno2->Width = 400;
 		okno2->Height = 400;
 		okno2->Text = "Rysowanie figur";
-		okno2->BackColor = System::Drawing::Color::NavajoWhite;
+		
+
+		GroupBox^ figury = gcnew GroupBox;
+		figury->Location = Point(30, 20);
+		figury->Text = "Figury";
+		okno2->Controls->Add(figury);
+
+	
+
 	}
 };
 }
