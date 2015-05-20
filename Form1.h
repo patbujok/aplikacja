@@ -173,6 +173,13 @@ namespace WindowsFormApplication1 {
 		dzielenie->Click += gcnew System::EventHandler(this, &Form1::dzielenie_Click);
 		okno->Controls->Add(dzielenie);
 
+		Button^ czyszczenie = gcnew Button;
+		czyszczenie->Location = Point(40, 190);
+		czyszczenie->Text = L"C";
+		czyszczenie->BackColor = System::Drawing::Color::Snow;
+		czyszczenie->Click += gcnew System::EventHandler(this, &Form1::czyszczenie_Click);
+		okno->Controls->Add(czyszczenie);
+
 		///////////etykiety///////////////
 		Label^ etykieta1 = gcnew Label;
 		etykieta1->Width = 200;
@@ -260,8 +267,15 @@ namespace WindowsFormApplication1 {
 											wynik2->Text = wynik.ToString();
 
 										}
+private: System::Void czyszczenie_Click(System::Object^  sender, System::EventArgs^  e){
 
-	
+	box1->Text = " ";
+	box2->Text = " ";
+	wynik2->Text = " ";
+
+}
+
+		
 	
 	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
 		Form^ okno2 = gcnew Form;
