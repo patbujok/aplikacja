@@ -304,7 +304,7 @@ private: System::Void czyszczenie_Click(System::Object^  sender, System::EventAr
 		this->Hide();
 
 		okno2->Width = 400;
-		okno2->Height = 400;
+		okno2->Height = 600;
 		okno2->Text = "Rysowanie figur";
 		
 
@@ -318,22 +318,55 @@ private: System::Void czyszczenie_Click(System::Object^  sender, System::EventAr
 		okno2->Controls->Add(tbox2);
 
 		TextBox^ tbox3 = gcnew TextBox;
-		tbox3->Location = Point(60, 60);
+		tbox3->Location = Point(60, 80);
 		okno2->Controls->Add(tbox3);
 
 		TextBox^ tbox4 = gcnew TextBox;
-		tbox4->Location = Point(200, 60);
+		tbox4->Location = Point(200, 80);
 		okno2->Controls->Add(tbox4);
 	
 		/////przycisk/////
 
 		Button^ rysuj = gcnew Button;
-		rysuj->Location = Point(160, 100);
+		rysuj->Location = Point(150, 200);
 		rysuj->Text = L"Rysuj";
 		rysuj->BackColor = System::Drawing::Color::Snow;
 		rysuj->Size = System::Drawing::Size(60, 40);
 		//rysuj->Click += gcnew System::EventHandler(this, &Form1::koniec_Click);//
 		okno2->Controls->Add(rysuj);
+
+		////etykiety////
+
+		Label^ wspx1 = gcnew Label;
+		wspx1->Width = 70;
+		wspx1->Text = "X1";
+		wspx1->Location = Point(100, 10);
+		wspx1->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(238)));
+		okno2->Controls->Add(wspx1);
+
+		Label^ wspx2 = gcnew Label;
+		wspx2->Width = 70;
+		wspx2->Text = "X2";
+		wspx2->Location = Point(240, 10);
+		wspx2->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(238)));
+		okno2->Controls->Add(wspx2);
+
+		Label^ wspy1 = gcnew Label;
+		wspy1->Text = "Y1";
+		wspy1->Location = Point(100, 60);
+		wspy1->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(238)));
+		okno2->Controls->Add(wspy1);
+
+		Label^ wspy2 = gcnew Label;
+		wspy2->Width = 70;
+		wspy2->Text = "Y2";
+		wspy2->Location = Point(240,60);
+		wspy2->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(238)));
+		okno2->Controls->Add(wspy2);
 
 	}
 };
