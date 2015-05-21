@@ -143,56 +143,69 @@ namespace WindowsFormApplication1 {
 		okno->Width = 400;
 		okno->Height = 400;
 		okno->Text = "miniKalkulator";
-		okno->BackColor = System::Drawing::Color::NavajoWhite;
+		okno->BackColor = System::Drawing::Color::PeachPuff;
 
 		Button^ plus = gcnew Button;
-		plus->Location = Point(40, 70);
+		plus->Location = Point(20, 120);
 		plus->Text = L"+";
 		plus->BackColor = System::Drawing::Color::Snow;
+		plus->Size = System::Drawing::Size(70, 70);
 		plus->Click += gcnew System::EventHandler(this, &Form1::plus_Click);
 		okno->Controls->Add(plus);
 
 		Button^ minus = gcnew Button;
-		minus->Location = Point(40, 100);
+		minus->Location = Point(110, 120);
 		minus->Text = L"-";
 		minus->BackColor = System::Drawing::Color::Snow;
+		minus->Size = System::Drawing::Size(70, 70);
 		minus->Click += gcnew System::EventHandler(this, &Form1::minus_Click);
 		okno->Controls->Add(minus);
 
 		Button^ gwiazdka = gcnew Button;
-		gwiazdka->Location = Point(40, 130);
+		gwiazdka->Location = Point(200, 120);
 		gwiazdka->Text = L"*";
 		gwiazdka->BackColor = System::Drawing::Color::Snow;
 		gwiazdka->Click += gcnew System::EventHandler(this, &Form1::gwiazdka_Click);
+		gwiazdka->Size = System::Drawing::Size(70, 70);
 		okno->Controls->Add(gwiazdka);
 
 		Button^ dzielenie = gcnew Button;
-		dzielenie->Location = Point(40, 160);
+		dzielenie->Location = Point(290, 120);
 		dzielenie->Text = L"/";
 		dzielenie->BackColor = System::Drawing::Color::Snow;
 		dzielenie->Click += gcnew System::EventHandler(this, &Form1::dzielenie_Click);
+		dzielenie->Size = System::Drawing::Size(70, 70);
 		okno->Controls->Add(dzielenie);
 
 		Button^ czyszczenie = gcnew Button;
-		czyszczenie->Location = Point(40, 190);
+		czyszczenie->Location = Point(150, 200);
 		czyszczenie->Text = L"C";
 		czyszczenie->BackColor = System::Drawing::Color::Snow;
+		czyszczenie->Size = System::Drawing::Size(70, 70);
 		czyszczenie->Click += gcnew System::EventHandler(this, &Form1::czyszczenie_Click);
 		okno->Controls->Add(czyszczenie);
 
+		Button^ koniec1 = gcnew Button;
+		koniec1->Location = Point(20, 300);
+		koniec1->Text = L"Koniec";
+		koniec1->BackColor = System::Drawing::Color::Snow;
+		koniec1->Size = System::Drawing::Size(60, 40);
+		koniec1->Click += gcnew System::EventHandler(this, &Form1::koniec_Click);
+		okno->Controls->Add(koniec1);
+
 		///////////etykiety///////////////
 		Label^ etykieta1 = gcnew Label;
-		etykieta1->Width = 200;
-		etykieta1->Text = "Podaj pierwsz¹ liczbê";
-		etykieta1->Location = Point(160, 70);
+		etykieta1->Width = 150;
+		etykieta1->Text = "Pierwsza liczba";
+		etykieta1->Location = Point(50, 30);
 		etykieta1->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 10.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 			static_cast<System::Byte>(238)));
 		okno->Controls->Add(etykieta1);
 
 		Label^ etykieta2 = gcnew Label;
 		etykieta2->Width = 200;
-		etykieta2->Text = "Podaj drug¹ liczbê";
-		etykieta2->Location = Point(160, 130);
+		etykieta2->Text = "Druga liczba";
+		etykieta2->Location = Point(220, 30);
 		etykieta2->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 10.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 			static_cast<System::Byte>(238)));
 		okno->Controls->Add(etykieta2);
@@ -200,7 +213,7 @@ namespace WindowsFormApplication1 {
 		Label^ wynik = gcnew Label;
 		wynik->Width = 70;
 		wynik->Text = "Wynik";
-		wynik->Location = Point(70, 250);
+		wynik->Location = Point(150, 280);
 		wynik->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 10.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 			static_cast<System::Byte>(238)));
 		okno->Controls->Add(wynik);
@@ -210,15 +223,17 @@ namespace WindowsFormApplication1 {
 		/////////textbox//////////
 
 		 box1 = gcnew TextBox;
-		box1->Location = Point(170, 100);
+		box1->Location = Point(50, 60);
+		box1->Width = 120;
 		okno->Controls->Add(box1);
 
 		box2 = gcnew TextBox;
-		box2->Location = Point(170, 160);
+		box2->Location = Point(220, 60);
+		box2->Width = 120;
 		okno->Controls->Add(box2);
 
 		wynik2 = gcnew TextBox;
-		wynik2->Location = Point(150, 250);
+		wynik2->Location = Point(130, 310);
 		okno->Controls->Add(wynik2);
 		
 
@@ -274,7 +289,13 @@ private: System::Void czyszczenie_Click(System::Object^  sender, System::EventAr
 	wynik2->Text = " ";
 
 }
+		 private: System::Void koniec_Click(System::Object^  sender, System::EventArgs^  e){
+			 Close();
 
+		 }
+
+					private: Form^ okno2;
+				 
 		
 	
 	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -287,12 +308,32 @@ private: System::Void czyszczenie_Click(System::Object^  sender, System::EventAr
 		okno2->Text = "Rysowanie figur";
 		
 
-		GroupBox^ figury = gcnew GroupBox;
-		figury->Location = Point(30, 20);
-		figury->Text = "Figury";
-		okno2->Controls->Add(figury);
+		////textBox////
+		TextBox^ tbox1 = gcnew TextBox;
+		tbox1->Location = Point(60, 30);
+		okno2->Controls->Add(tbox1);
 
+		TextBox^ tbox2 = gcnew TextBox;
+		tbox2->Location = Point(200, 30);
+		okno2->Controls->Add(tbox2);
+
+		TextBox^ tbox3 = gcnew TextBox;
+		tbox3->Location = Point(60, 60);
+		okno2->Controls->Add(tbox3);
+
+		TextBox^ tbox4 = gcnew TextBox;
+		tbox4->Location = Point(200, 60);
+		okno2->Controls->Add(tbox4);
 	
+		/////przycisk/////
+
+		Button^ rysuj = gcnew Button;
+		rysuj->Location = Point(160, 100);
+		rysuj->Text = L"Rysuj";
+		rysuj->BackColor = System::Drawing::Color::Snow;
+		rysuj->Size = System::Drawing::Size(60, 40);
+		//rysuj->Click += gcnew System::EventHandler(this, &Form1::koniec_Click);//
+		okno2->Controls->Add(rysuj);
 
 	}
 };
