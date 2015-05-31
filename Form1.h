@@ -38,6 +38,7 @@ namespace WindowsFormApplication1 {
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Button^  button2;
 	private: System::Windows::Forms::Button^  button3;
+
 	protected:
 
 	private:
@@ -53,8 +54,7 @@ namespace WindowsFormApplication1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-	
-		this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
@@ -294,8 +294,10 @@ private: System::Void czyszczenie_Click(System::Object^  sender, System::EventAr
 
 		 }
 
-					private: Form^ okno2;
-				 
+				 private: CheckBox^ cbox1;
+						  private: CheckBox^ cbox2;
+								   private: CheckBox^ cbox3;
+											private: CheckBox^ cbox4;
 		
 	
 	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -328,11 +330,11 @@ private: System::Void czyszczenie_Click(System::Object^  sender, System::EventAr
 		/////przycisk/////
 
 		Button^ rysuj = gcnew Button;
-		rysuj->Location = Point(150, 200);
+		rysuj->Location = Point(150, 120);
 		rysuj->Text = L"Rysuj";
 		rysuj->BackColor = System::Drawing::Color::Snow;
 		rysuj->Size = System::Drawing::Size(60, 40);
-		//rysuj->Click += gcnew System::EventHandler(this, &Form1::koniec_Click);//
+		rysuj->Click += gcnew System::EventHandler(this, &Form1::rysuj_Click);
 		okno2->Controls->Add(rysuj);
 
 		////etykiety////
@@ -367,6 +369,62 @@ private: System::Void czyszczenie_Click(System::Object^  sender, System::EventAr
 		wspy2->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 			static_cast<System::Byte>(238)));
 		okno2->Controls->Add(wspy2);
+
+		////checkbox////
+
+		CheckBox^ cbox1 = gcnew CheckBox;
+		cbox1->Text = "Linia";
+		cbox1->Location = System::Drawing::Point(60, 100);
+		okno2->Controls->Add(cbox1);
+
+		CheckBox^ cbox2 = gcnew CheckBox;
+		cbox2->Text = "Kwadrat";
+		cbox2->Location = System::Drawing::Point(60, 120);
+		okno2->Controls->Add(cbox2);
+
+		CheckBox^ cbox3 = gcnew CheckBox;
+		cbox3->Text = "Okr¹g";
+		cbox3->Location = System::Drawing::Point(60, 140);
+		okno2->Controls->Add(cbox3);
+
+	}
+
+					private: Form^ okno2;
+							 private: TextBox^ tbox1;
+									  private: TextBox^ tbox2;
+											   private: TextBox^ tbox3;
+														private: TextBox^ tbox4;
+			 int x, y, z, w;
+			
+
+			
+	private: System::Void rysuj_Click(System::Object^  sender, System::EventArgs^  e) {
+		Graphics ^ g = this->CreateGraphics();
+		Pen^ pedzel = gcnew Pen(System::Drawing::Color::DarkBlue);
+		
+
+
+		/*x=Convert::ToInt16(tbox1->Text);
+		y = Convert::ToInt16(tbox2->Text);
+		z = Convert::ToInt16(tbox3->Text);
+		w =Convert::ToInt16(tbox4->Text);*/
+		
+
+	x = Int16::Parse(tbox1->Text);
+		y = Int16::Parse(tbox3->Text);
+		z = Int16::Parse(tbox2->Text);
+		w = Int16::Parse(tbox4->Text);
+
+		if (cbox1->Checked)
+		{
+			g->DrawLine(pedzel, x,y,z,w);
+		}
+		else if (cbox2->Checked){
+			g->DrawRectangle(pedzel, x, y, z, w);
+		}
+		else if (cbox3->Checked){
+			g->DrawEllipse(pedzel, x, y, z, w);
+		}
 
 	}
 };
