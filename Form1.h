@@ -128,10 +128,10 @@ namespace WindowsFormApplication1 {
 
 		}
 #pragma endregion
-		private: Form^ okno;
-				 private: TextBox^ box1;
-						  private: TextBox^ box2;
-								   private: TextBox^ wynik2;
+	private: Form^ okno;
+	private: TextBox^ box1;
+	private: TextBox^ box2;
+	private: TextBox^ wynik2;
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 		Close();
 	}
@@ -218,11 +218,11 @@ namespace WindowsFormApplication1 {
 			static_cast<System::Byte>(238)));
 		okno->Controls->Add(wynik);
 
-		
+
 
 		/////////textbox//////////
 
-		 box1 = gcnew TextBox;
+		box1 = gcnew TextBox;
 		box1->Location = Point(50, 60);
 		box1->Width = 120;
 		okno->Controls->Add(box1);
@@ -235,11 +235,11 @@ namespace WindowsFormApplication1 {
 		wynik2 = gcnew TextBox;
 		wynik2->Location = Point(130, 310);
 		okno->Controls->Add(wynik2);
-		
+
 
 	}
 
-		////button click////
+			 ////button click////
 	private: System::Void plus_Click(System::Object^  sender, System::EventArgs^  e){
 
 		double x, y, wynik;
@@ -251,55 +251,55 @@ namespace WindowsFormApplication1 {
 
 	}
 
-				private: System::Void minus_Click(System::Object^  sender, System::EventArgs^  e){
+	private: System::Void minus_Click(System::Object^  sender, System::EventArgs^  e){
 
-					double x, y, wynik;
-					x = Double::Parse(box1->Text);
-					y = Double::Parse(box2->Text);
-					wynik = x - y;
+		double x, y, wynik;
+		x = Double::Parse(box1->Text);
+		y = Double::Parse(box2->Text);
+		wynik = x - y;
 
-					wynik2->Text = wynik.ToString();
+		wynik2->Text = wynik.ToString();
 
-				}
+	}
 
-							private: System::Void gwiazdka_Click(System::Object^  sender, System::EventArgs^  e){
+	private: System::Void gwiazdka_Click(System::Object^  sender, System::EventArgs^  e){
 
-								double x, y, wynik;
-								x = Double::Parse(box1->Text);
-								y = Double::Parse(box2->Text);
-								wynik = x * y;
+		double x, y, wynik;
+		x = Double::Parse(box1->Text);
+		y = Double::Parse(box2->Text);
+		wynik = x * y;
 
-								wynik2->Text = wynik.ToString();
+		wynik2->Text = wynik.ToString();
 
-							}
-										private: System::Void dzielenie_Click(System::Object^  sender, System::EventArgs^  e){
+	}
+	private: System::Void dzielenie_Click(System::Object^  sender, System::EventArgs^  e){
 
-											double x, y, wynik;
-											x = Double::Parse(box1->Text);
-											y = Double::Parse(box2->Text);
-											wynik = x / y;
+		double x, y, wynik;
+		x = Double::Parse(box1->Text);
+		y = Double::Parse(box2->Text);
+		wynik = x / y;
 
-											wynik2->Text = wynik.ToString();
+		wynik2->Text = wynik.ToString();
 
-										}
-private: System::Void czyszczenie_Click(System::Object^  sender, System::EventArgs^  e){
+	}
+	private: System::Void czyszczenie_Click(System::Object^  sender, System::EventArgs^  e){
 
-	box1->Text = " ";
-	box2->Text = " ";
-	wynik2->Text = " ";
+		box1->Text = " ";
+		box2->Text = " ";
+		wynik2->Text = " ";
 
-}
-		 private: System::Void koniec_Click(System::Object^  sender, System::EventArgs^  e){
-			 Close();
+	}
+	private: System::Void koniec_Click(System::Object^  sender, System::EventArgs^  e){
+		Close();
 
-		 }
+	}
 
-				 private: CheckBox^ cbox1;
-						  private: CheckBox^ cbox2;
-								   private: CheckBox^ cbox3;
-											private: CheckBox^ cbox4;
-		
-	
+	private: CheckBox^ cbox1;
+	private: CheckBox^ cbox2;
+	private: CheckBox^ cbox3;
+	private: CheckBox^ cbox4;
+
+
 	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
 		Form^ okno2 = gcnew Form;
 		okno2->Show();
@@ -308,7 +308,7 @@ private: System::Void czyszczenie_Click(System::Object^  sender, System::EventAr
 		okno2->Width = 400;
 		okno2->Height = 600;
 		okno2->Text = "Rysowanie figur";
-		
+
 
 		////textBox////
 		TextBox^ tbox1 = gcnew TextBox;
@@ -326,7 +326,7 @@ private: System::Void czyszczenie_Click(System::Object^  sender, System::EventAr
 		TextBox^ tbox4 = gcnew TextBox;
 		tbox4->Location = Point(200, 80);
 		okno2->Controls->Add(tbox4);
-	
+
 		/////przycisk/////
 
 		Button^ rysuj = gcnew Button;
@@ -349,14 +349,14 @@ private: System::Void czyszczenie_Click(System::Object^  sender, System::EventAr
 
 		Label^ wspx2 = gcnew Label;
 		wspx2->Width = 70;
-		wspx2->Text = "X2";
+		wspx2->Text = "Y1";
 		wspx2->Location = Point(240, 10);
 		wspx2->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 			static_cast<System::Byte>(238)));
 		okno2->Controls->Add(wspx2);
 
 		Label^ wspy1 = gcnew Label;
-		wspy1->Text = "Y1";
+		wspy1->Text = "X2";
 		wspy1->Location = Point(100, 60);
 		wspy1->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 			static_cast<System::Byte>(238)));
@@ -365,10 +365,42 @@ private: System::Void czyszczenie_Click(System::Object^  sender, System::EventAr
 		Label^ wspy2 = gcnew Label;
 		wspy2->Width = 70;
 		wspy2->Text = "Y2";
-		wspy2->Location = Point(240,60);
+		wspy2->Location = Point(240, 60);
 		wspy2->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 			static_cast<System::Byte>(238)));
 		okno2->Controls->Add(wspy2);
+
+		Label^ pkt1 = gcnew Label;
+		pkt1->Width = 70;
+		pkt1->Text = "(20,180)";
+		pkt1->Location = Point(20, 180);
+		pkt1->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 5.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(238)));
+		okno2->Controls->Add(pkt1);
+
+		Label^ pkt2 = gcnew Label;
+		pkt2->Width = 70;
+		pkt2->Text = "(20,550)";
+		pkt2->Location = Point(20, 550);
+		pkt2->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 5.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(238)));
+		okno2->Controls->Add(pkt2);
+
+		Label^ pkt3 = gcnew Label;
+		pkt3->Width = 70;
+		pkt3->Text = "(330,550)";
+		pkt3->Location = Point(330, 550);
+		pkt3->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 5.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(238)));
+		okno2->Controls->Add(pkt3);
+
+		Label^ pkt4 = gcnew Label;
+		pkt4->Width = 70;
+		pkt4->Text = "(330,180)";
+		pkt4->Location = Point(330, 180);
+		pkt4->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 5.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(238)));
+		okno2->Controls->Add(pkt4);
 
 		////checkbox////
 
@@ -389,35 +421,35 @@ private: System::Void czyszczenie_Click(System::Object^  sender, System::EventAr
 
 	}
 
-					private: Form^ okno2;
-							 private: TextBox^ tbox1;
-									  private: TextBox^ tbox2;
-											   private: TextBox^ tbox3;
-														private: TextBox^ tbox4;
+	private: Form^ okno2;
+	private: TextBox^ tbox1;
+	private: TextBox^ tbox2;
+	private: TextBox^ tbox3;
+	private: TextBox^ tbox4;
 			 int x, y, z, w;
-			
 
-			
+
+
 	private: System::Void rysuj_Click(System::Object^  sender, System::EventArgs^  e) {
 		Graphics ^ g = this->CreateGraphics();
 		Pen^ pedzel = gcnew Pen(System::Drawing::Color::DarkBlue);
-		
+
 
 
 		/*x=Convert::ToInt16(tbox1->Text);
 		y = Convert::ToInt16(tbox2->Text);
 		z = Convert::ToInt16(tbox3->Text);
 		w =Convert::ToInt16(tbox4->Text);*/
-		
 
-	x = Int16::Parse(tbox1->Text);
-		y = Int16::Parse(tbox3->Text);
-		z = Int16::Parse(tbox2->Text);
+
+		x = Int16::Parse(tbox1->Text);
+		y = Int16::Parse(tbox2->Text);
+		z = Int16::Parse(tbox3->Text);
 		w = Int16::Parse(tbox4->Text);
 
 		if (cbox1->Checked)
 		{
-			g->DrawLine(pedzel, x,y,z,w);
+			g->DrawLine(pedzel, x, y, z, w);
 		}
 		else if (cbox2->Checked){
 			g->DrawRectangle(pedzel, x, y, z, w);
@@ -427,6 +459,6 @@ private: System::Void czyszczenie_Click(System::Object^  sender, System::EventAr
 		}
 
 	}
-};
+	};
 }
 
