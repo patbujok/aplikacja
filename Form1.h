@@ -1,4 +1,5 @@
 #pragma once
+#include"MyForm.h"
 
 namespace WindowsFormApplication1 {
 
@@ -301,11 +302,11 @@ namespace WindowsFormApplication1 {
 
 
 	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
-		Form^ okno2 = gcnew Form;
-		okno2->Show();
+		Projekt::MyForm^ okno = gcnew Projekt::Rysowanie figur();
+	okno->Show();
 		this->Hide();
 
-		okno2->Width = 400;
+		/*okno2->Width = 400;
 		okno2->Height = 600;
 		okno2->Text = "Rysowanie figur";
 
@@ -344,7 +345,7 @@ namespace WindowsFormApplication1 {
 		wspx1->Text = "X1";
 		wspx1->Location = Point(100, 10);
 		wspx1->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(238)));
+		static_cast<System::Byte>(238)));
 		okno2->Controls->Add(wspx1);
 
 		Label^ wspx2 = gcnew Label;
@@ -352,14 +353,14 @@ namespace WindowsFormApplication1 {
 		wspx2->Text = "Y1";
 		wspx2->Location = Point(240, 10);
 		wspx2->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(238)));
+		static_cast<System::Byte>(238)));
 		okno2->Controls->Add(wspx2);
 
 		Label^ wspy1 = gcnew Label;
 		wspy1->Text = "X2";
 		wspy1->Location = Point(100, 60);
 		wspy1->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(238)));
+		static_cast<System::Byte>(238)));
 		okno2->Controls->Add(wspy1);
 
 		Label^ wspy2 = gcnew Label;
@@ -367,7 +368,7 @@ namespace WindowsFormApplication1 {
 		wspy2->Text = "Y2";
 		wspy2->Location = Point(240, 60);
 		wspy2->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(238)));
+		static_cast<System::Byte>(238)));
 		okno2->Controls->Add(wspy2);
 
 		Label^ pkt1 = gcnew Label;
@@ -375,7 +376,7 @@ namespace WindowsFormApplication1 {
 		pkt1->Text = "(20,180)";
 		pkt1->Location = Point(20, 180);
 		pkt1->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 5.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(238)));
+		static_cast<System::Byte>(238)));
 		okno2->Controls->Add(pkt1);
 
 		Label^ pkt2 = gcnew Label;
@@ -383,7 +384,7 @@ namespace WindowsFormApplication1 {
 		pkt2->Text = "(20,550)";
 		pkt2->Location = Point(20, 550);
 		pkt2->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 5.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(238)));
+		static_cast<System::Byte>(238)));
 		okno2->Controls->Add(pkt2);
 
 		Label^ pkt3 = gcnew Label;
@@ -391,7 +392,7 @@ namespace WindowsFormApplication1 {
 		pkt3->Text = "(330,550)";
 		pkt3->Location = Point(330, 550);
 		pkt3->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 5.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(238)));
+		static_cast<System::Byte>(238)));
 		okno2->Controls->Add(pkt3);
 
 		Label^ pkt4 = gcnew Label;
@@ -399,7 +400,7 @@ namespace WindowsFormApplication1 {
 		pkt4->Text = "(330,180)";
 		pkt4->Location = Point(330, 180);
 		pkt4->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 5.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(238)));
+		static_cast<System::Byte>(238)));
 		okno2->Controls->Add(pkt4);
 
 		////checkbox////
@@ -419,46 +420,38 @@ namespace WindowsFormApplication1 {
 		cbox3->Location = System::Drawing::Point(60, 140);
 		okno2->Controls->Add(cbox3);
 
-	}
-
-	private: Form^ okno2;
-	private: TextBox^ tbox1;
-	private: TextBox^ tbox2;
-	private: TextBox^ tbox3;
-	private: TextBox^ tbox4;
-			 int x, y, z, w;
+		}
 
 
+		private: Form^ okno2;
+		private: TextBox^ tbox1;
+		private: TextBox^ tbox2;
+		private: TextBox^ tbox3;
+		private: TextBox^ tbox4;
+		int x, y, z, w;
 
-	private: System::Void rysuj_Click(System::Object^  sender, System::EventArgs^  e) {
-		Graphics ^ g = this->CreateGraphics();
+
+
+
+
+		private: System::Void rysuj_Click(System::Object^  sender, System::EventArgs^  e) {
+		Graphics ^ g = okno2->CreateGraphics();
 		Pen^ pedzel = gcnew Pen(System::Drawing::Color::DarkBlue);
 
 
-
-		/*x=Convert::ToInt16(tbox1->Text);
-		y = Convert::ToInt16(tbox2->Text);
-		z = Convert::ToInt16(tbox3->Text);
-		w =Convert::ToInt16(tbox4->Text);*/
-
-
-		x = Int16::Parse(tbox1->Text);
-		y = Int16::Parse(tbox2->Text);
-		z = Int16::Parse(tbox3->Text);
-		w = Int16::Parse(tbox4->Text);
-
 		if (cbox1->Checked)
 		{
-			g->DrawLine(pedzel, x, y, z, w);
+		g->DrawLine(pedzel, 50, 100, 80, 300);
 		}
 		else if (cbox2->Checked){
-			g->DrawRectangle(pedzel, x, y, z, w);
+		g->DrawLine(pedzel, 50, 100, 80, 300);
 		}
 		else if (cbox3->Checked){
-			g->DrawEllipse(pedzel, x, y, z, w);
+		g->DrawLine(pedzel, 50, 100, 80, 300);
 		}
 
+		}
+		};*/
 	}
-	};
-}
-
+	;
+	}
